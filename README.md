@@ -199,62 +199,8 @@ detection:
   max_speed: 150                # Maximum valid speed (mph)
 ```
 
----
 
-## 🔧 Troubleshooting
 
-### Error: "No module named 'src.metrics'"
-
-**Fix:**
-```bash
-# Make sure you're in the project root
-cd traffic_monitoring
-python main.py ...
-```
-
-### Error: "Cannot find config file"
-
-**Fix:**
-```bash
-# Create config directory and file
-mkdir config
-# Copy config.yaml content from artifact above
-```
-
-### Error: "YOLO model not found"
-
-**Fix:**
-```bash
-# Download YOLOv8 nano model
-mkdir models
-cd models
-# Download: https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8n.pt
-```
-
-### Error: "Out of memory" during parallel processing
-
-**Fix:**
-```bash
-# Reduce number of workers
-python main.py --folder data/input_videos --asymmetric --workers 2
-
-# Or reduce resolution in config.yaml
-edge:
-  resolution: [240, 135]
-```
-
-### Error: "Video file not found"
-
-**Fix:**
-```bash
-# Check video path
-ls data/input_videos/
-
-# Use absolute path if needed
-python main.py --video "C:/full/path/to/video.mp4" --mode edge
-```
-
----
 
 ## 📊 Analyzing Results
 
@@ -312,121 +258,9 @@ notepad data/results/asymmetric/asymmetric_report.txt
 | `src/asymmetric_processor.py` | Parallel processing | ⭐ New |
 | `config/config.yaml` | System configuration | ⭐ Updated |
 
-### Processing Nodes (Must Implement)
-
-| File | Purpose | Your Status |
-|------|---------|-------------|
-| `src/edge_node.py` | Edge processing logic | ✅ Have / ❌ Need |
-| `src/cloud_node.py` | Cloud processing logic | ✅ Have / ❌ Need |
-| `src/network_simulator.py` | Network simulation | ✅ Have / ❌ Need |
-
----
-
-## 🧪 Testing Checklist
-
-```bash
-# 1. Test imports
-python -c "from src.metrics import MetricsCollector; print('✅ Metrics OK')"
-python -c "from src.utils import ConfigLoader; print('✅ Utils OK')"
-python -c "from src.asymmetric_processor import run_asymmetric_processing; print('✅ Asymmetric OK')"
-
-# 2. Test config loading
-python -c "from src.utils import ConfigLoader; c = ConfigLoader.load_config('config/config.yaml'); print('✅ Config OK')"
-
-# 3. Test single video
-python main.py --video data/input_videos/test.mp4 --mode edge
-
-# 4. Test asymmetric (with 2 test videos)
-mkdir data/test_videos
-cp data/input_videos/video1.mp4 data/test_videos/
-cp data/input_videos/video2.mp4 data/test_videos/
-python main.py --folder data/test_videos --asymmetric --workers 2
-
-# 5. Check results
-ls data/results/asymmetric/
-start data/results/asymmetric/asymmetric_comparison.png
-```
-
----
-
-## 💡 Best Practices
-
-### For Research/Testing:
-1. **Start small** - Test with 2-3 videos first
-2. **Use test folder** - Create `data/test_videos/` for experiments
-3. **Save configs** - Keep different `config_*.yaml` for different tests
-4. **Document results** - Name output directories descriptively
-
-### For Production:
-1. **Optimize workers** - Use `CPU_cores - 2` workers
-2. **Monitor resources** - Watch CPU/RAM usage
-3. **Batch processing** - Process videos in groups
-4. **Error handling** - Check logs for failed videos
-
-### For Comparison:
-```bash
-# Test 1: Low bandwidth
-python main.py --folder data/input_videos --asymmetric --workers 5 --output results/bw_low
-
-# Test 2: High bandwidth  
-python main.py --folder data/input_videos --asymmetric --workers 5 --output results/bw_high
-
-# Compare results
-python compare_results.py results/bw_low results/bw_high
-```
-
----
-
-## 📞 Support
-
-### Common Commands Reference
-
-```bash
-# Help
-python main.py --help
-
-# Single video
-python main.py --video PATH --mode [edge|cloud|hybrid] [--bandwidth 300]
-
-# Batch sequential
-python main.py --folder PATH --mode [edge|cloud|hybrid] [--bandwidth 300]
-
-# Asymmetric parallel (RECOMMENDED)
-python main.py --folder PATH --asymmetric [--workers 5]
-
-# Comparison mode
-python main.py --video PATH --mode compare
-```
-
-### File Checklist
-
-Before running, ensure you have:
-- [ ] `main.py` (updated version from artifact)
-- [ ] `src/metrics.py` (updated version from artifact)
-- [ ] `src/utils.py` (updated version from artifact)
-- [ ] `src/asymmetric_processor.py` (new file from earlier artifact)
-- [ ] `config/config.yaml` (updated version from artifact)
-- [ ] `src/edge_node.py` (your existing file)
-- [ ] `src/cloud_node.py` (your existing file)
-- [ ] `src/network_simulator.py` (your existing file)
-- [ ] Videos in `data/input_videos/`
-- [ ] YOLO model in `models/yolov8n.pt`
-
----
-
-## 🎓 For Research Papers
-
-### Tables to Include:
-1. **Performance Comparison** - From `asymmetric_data.json`
-2. **Resource Usage** - CPU and RAM metrics
-3. **Per-Video Results** - From `edge_results.csv` and `cloud_results.csv`
-
-### Figures to Include:
-1. **Main Comparison** - `asymmetric_comparison.png` (8 subplots)
-2. **Processing Time** - Custom plot from CSV data
-3. **Detection Accuracy** - Comparison plot
 
 ### Statistics to Report:
+Example : 
 - Speedup: 2.9x
 - CPU Reduction: 48.6%
 - RAM Reduction: 43.9%
@@ -435,19 +269,10 @@ Before running, ensure you have:
 
 ---
 
-## ✅ You're Ready!
-
-Run your first asymmetric comparison:
+Example Run command:
 
 ```bash
 python main.py --folder data/input_videos --asymmetric --workers 5
 ```
 
-Check results:
 
-```bash
-start data/results/asymmetric/asymmetric_comparison.png
-notepad data/results/asymmetric/asymmetric_report.txt
-```
-
-Happy processing! 🚀📊"# Traffic_Footage_Processor" 
