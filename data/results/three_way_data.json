@@ -1,0 +1,57 @@
+{
+  "edge": {
+    "mode": "edge",
+    "num_workers": 5,
+    "total_videos": 15,
+    "successful": 15,
+    "cpu_avg": 7.030588235294118,
+    "cpu_total": 35.15294117647059,
+    "cpu_note": "Average CPU per worker (total 35.2% / 5 workers)",
+    "ram_avg_gb": 0.05010694615981158,
+    "avg_processing_time_ms": 75.6077724774025,
+    "avg_vehicle_count": 9.945369105552237,
+    "avg_speed": 46.323702655879295
+  },
+  "cloud": {
+    "mode": "cloud",
+    "num_workers": 1,
+    "total_videos": 15,
+    "successful": 15,
+    "cpu_avg": 10.853333333333333,
+    "ram_avg_gb": 0.3409716288248698,
+    "avg_processing_time_ms": 336.43340303957746,
+    "avg_vehicle_count": 7.708581870096853,
+    "avg_speed": 50.96703202238238
+  },
+  "hybrid": {
+    "mode": "hybrid",
+    "num_workers": 6,
+    "total_videos": 15,
+    "successful": 15,
+    "cpu_avg": 6.507857142857143,
+    "ram_avg_gb": 0.19271586281912667,
+    "avg_processing_time_ms": 150.4956173633814,
+    "avg_vehicle_count": 9.409326531773813,
+    "avg_speed": 47.20388789377048,
+    "edge_videos": 11,
+    "cloud_videos": 4,
+    "edge_percentage": 73.33333333333333
+  },
+  "comparison": {
+    "edge_vs_cloud": {
+      "time_improvement": 77.52667487998862,
+      "cpu_reduction": 35.22185286891169,
+      "ram_reduction": 85.30465824018819
+    },
+    "hybrid_vs_cloud": {
+      "time_improvement": 55.26733790292596,
+      "cpu_reduction": 40.03817128817129,
+      "ram_reduction": 43.48038178915185
+    },
+    "hybrid_vs_edge": {
+      "time_difference": -99.04781272105487,
+      "cpu_difference": 7.435097532989111,
+      "ram_difference": -284.60907636333854
+    }
+  }
+}

@@ -1,0 +1,89 @@
+================================================================================
+THREE-WAY PERFORMANCE COMPARISON REPORT
+================================================================================
+
+PROCESSING MODES:
+  • Edge: 5 workers (parallel)
+  • Cloud: 1 worker (sequential)
+  • Hybrid: 6 total (5 edge + 1 cloud, adaptive)
+  • Total Videos: 15
+
+--------------------------------------------------------------------------------
+EDGE (5 PARALLEL) VS CLOUD (1 SEQUENTIAL)
+--------------------------------------------------------------------------------
+  Processing Time: 77.5% faster
+  CPU Usage: 7.0% (total from 5 workers) vs 10.9% (1 worker)
+  RAM Usage: 85.3% less
+  Note: Edge CPU is COMBINED usage of all 5 parallel workers
+
+--------------------------------------------------------------------------------
+HYBRID (5 EDGE + 1 CLOUD, ADAPTIVE) VS CLOUD (1 SEQUENTIAL)
+--------------------------------------------------------------------------------
+  Processing Time: 55.3% faster
+  CPU Usage: 40.0% less
+  RAM Usage: 43.5% less
+  Edge Processing: 73.3% of videos
+  Cloud Processing: 26.7% of videos
+  Edge Videos: 11/15
+  Cloud Videos: 4/15
+
+--------------------------------------------------------------------------------
+HYBRID VS EDGE (PARALLEL)
+--------------------------------------------------------------------------------
+  Processing Time: -99.0%
+  CPU Usage: +7.4%
+  RAM Usage: -284.6%
+
+--------------------------------------------------------------------------------
+DETECTION QUALITY
+--------------------------------------------------------------------------------
+  Edge - Vehicle Count: 9.95, Speed: 46.3
+  Cloud - Vehicle Count: 7.71, Speed: 51.0
+  Hybrid - Vehicle Count: 9.41, Speed: 47.2
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+1. EDGE PARALLEL (5 workers):
+   - Best throughput for multi-camera deployments
+   - Total CPU: 7.0% (combined from 5 workers)
+   - Requires multiple edge devices
+
+2. HYBRID ADAPTIVE (5 edge + 1 cloud):
+   - Best balance of performance and accuracy
+   - 55.3% faster than Cloud
+   - 40.0% less CPU than Cloud
+   - 43.5% less RAM than Cloud
+   - Intelligent video-based routing (70% edge, 30% cloud)
+   - Both edge and cloud resources available
+
+3. CLOUD ONLY (1 worker):
+   - Baseline performance
+   - Highest resource usage
+   - Network dependent
+
+================================================================================
+RECOMMENDATIONS
+================================================================================
+
+USE HYBRID MODE WHEN:
+  • Have multiple edge devices + cloud available
+  • Need balance between performance and accuracy
+  • Want intelligent video-based load distribution
+  • Can accept 27% cloud processing for complex videos
+  • Want fault tolerance (cloud backup for edge)
+
+USE EDGE PARALLEL WHEN:
+  • Multiple edge devices available
+  • Maximum throughput needed
+  • Minimal cloud dependency desired
+  • Network bandwidth is limited
+
+USE CLOUD WHEN:
+  • High accuracy is critical
+  • Unlimited network bandwidth
+  • Edge devices not available
+  • Need centralized processing
+
+================================================================================

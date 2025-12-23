@@ -1,0 +1,59 @@
+======================================================================
+AGGREGATE EDGE vs CLOUD COMPARISON
+======================================================================
+
+Generated: 2025-10-22 22:38:43
+Parallel workers: 10
+Total videos: 15
+
+----------------------------------------------------------------------
+PROCESSING TIME COMPARISON
+----------------------------------------------------------------------
+Metric                                           Edge        Cloud
+----------------------------------------------------------------------
+Total processing time                         17.23s      48.09s
+Avg time per video                             1.15s       3.21s
+Avg time per frame                            67.87ms     375.77ms
+Throughput (videos/sec)                         0.870        0.312
+
+ Edge is 2.79x FASTER than Cloud
+  Time saved: 30.86 seconds (0.51 minutes)
+
+----------------------------------------------------------------------
+RESOURCE USAGE COMPARISON
+----------------------------------------------------------------------
+Metric                                           Edge        Cloud
+----------------------------------------------------------------------
+CPU usage (%)                                     6.7          7.2
+RAM usage (GB)                                  11.66        11.08
+RAM usage (%)                                    74.8         71.1
+
+ Edge uses 7.6% LESS CPU than Cloud
+ Edge uses -5.3% LESS RAM than Cloud
+ RAM saved: -0.58 GB
+
+----------------------------------------------------------------------
+TRAFFIC ANALYSIS COMPARISON
+----------------------------------------------------------------------
+Metric                                           Edge        Cloud
+----------------------------------------------------------------------
+Total frames processed                            784          784
+Avg vehicles per frame                           9.95         7.71
+Avg speed (mph)                                 46.32        51.73
+Avg congestion (%)                               0.00         0.00
+
+ Edge detection accuracy: 71.0% (vs Cloud ground truth)
+   Vehicle count error: 2.24 (29.0%)
+
+----------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------
+Edge processing provides:
+   2.79x faster processing
+   7.6% CPU reduction
+   -5.3% RAM reduction
+   0.870 videos/second throughput
+    71.0% detection accuracy (vs Cloud)
+
+Optimal for: Real-time processing, resource-constrained environments
+Cloud recommended for: Maximum accuracy requirements

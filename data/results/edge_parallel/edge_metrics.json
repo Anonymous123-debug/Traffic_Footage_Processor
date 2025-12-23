@@ -1,0 +1,13 @@
+{
+  "mode": "edge",
+  "num_workers": 5,
+  "total_videos": 15,
+  "successful": 15,
+  "cpu_avg": 7.030588235294118,
+  "cpu_total": 35.15294117647059,
+  "cpu_note": "Average CPU per worker (total 35.2% / 5 workers)",
+  "ram_avg_gb": 0.05010694615981158,
+  "avg_processing_time_ms": 75.6077724774025,
+  "avg_vehicle_count": 9.945369105552237,
+  "avg_speed": 46.323702655879295
+}

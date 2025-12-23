@@ -1,0 +1,26 @@
+======================================================================
+EDGE PARALLEL PROCESSING REPORT
+======================================================================
+
+Configuration:
+  Workers: 10
+  Total videos: 15
+  Successful: 15
+  Failed: 0
+
+Performance:
+  Total duration: 17.23 seconds
+  Throughput: 0.87 videos/sec
+  Avg time per video: 1.15 seconds
+  Avg time per frame: 67.87 ms
+
+System Resources:
+  CPU usage: 6.7%
+  RAM usage: 11.66 GB (74.8%)
+
+Traffic Analysis:
+  Total frames: 784
+  Avg vehicles: 9.95
+  Avg speed: 46.32 mph
+  Avg congestion: 0.00%
+

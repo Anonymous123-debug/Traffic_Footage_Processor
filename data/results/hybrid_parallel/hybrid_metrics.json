@@ -1,0 +1,14 @@
+{
+  "mode": "hybrid_parallel",
+  "num_workers": 6,
+  "total_videos": 15,
+  "successful": 15,
+  "cpu_avg": 9.535555555555556,
+  "ram_avg_gb": 0.2721572452121311,
+  "avg_processing_time_ms": 372.9029494396444,
+  "avg_vehicle_count": 6.008841434493489,
+  "avg_speed": 28.10665370962126,
+  "edge_frames": 468,
+  "cloud_frames": 316,
+  "edge_percentage": 59.693877551020414
+}

@@ -1,0 +1,11 @@
+{
+  "mode": "cloud",
+  "num_workers": 1,
+  "total_videos": 15,
+  "successful": 15,
+  "cpu_avg": 10.853333333333333,
+  "ram_avg_gb": 0.3409716288248698,
+  "avg_processing_time_ms": 336.43340303957746,
+  "avg_vehicle_count": 7.708581870096853,
+  "avg_speed": 50.96703202238238
+}

@@ -1,0 +1,88 @@
+system:
+  fps: 30
+  network_threshold: 300
+  frame_buffer_size: 10
+  video_codec: mp4v
+
+edge:
+  resolution: [1280, 720]
+  gmm_history: 500
+  gmm_var_threshold: 16
+  gfm_components: 3
+  color_space: gray
+  learning_rate: -1
+  morphological_ops: true
+  min_area: 150
+  max_area: 50000
+  morphology_kernel_size: 3
+
+cloud:
+  resolution: [1280, 720]
+  model: yolov10n
+  model_path: models/yolov10n.pt
+  confidence_threshold: 0.5
+  iou_threshold: 0.45
+  use_gpu: true
+  gmm_history: 500
+  gmm_var_threshold: 16
+  gfm_components: 5
+
+network:
+  bandwidth_kbps: 300
+  threshold_kbps: 300
+  latency_ms: 50
+  packet_loss: 0.05
+  bandwidth_fluctuation: 50
+  congestion_probability: 0.05
+  bandwidth_smoothing: 0.7
+
+detection:
+  congestion_time_threshold: 10
+  congestion_vehicle_threshold: 2
+  speed_confidence_threshold: 0.3
+  min_vehicle_area: 150
+  max_vehicle_area: 50000
+  match_distance: 100
+  min_speed: 1
+  max_speed: 150
+  track_timeout: 5
+  congestion_threshold: 10
+  congestion_speed_threshold: 20
+  fps: 30
+  pixels_per_meter: 10
+
+calibration:
+  pixels_per_meter: 20
+  max_speed_mph: 150
+  min_speed_mph: 1
+  fps: 30
+  roi_points: [[0, 0], [1920, 0], [1920, 1080], [0, 1080]]
+  distance_threshold: 50
+  time_window: 1.0
+
+visualization:
+  show_bboxes: true
+  show_speeds: true
+  show_tracks: true
+  font_scale: 0.6
+  show_bounding_boxes: true
+  show_speed: true
+  show_congestion_warning: true
+  overlay_opacity: 0.3
+  color_edge: [0, 255, 0]
+  color_cloud: [0, 0, 255]
+  color_congestion: [255, 0, 0]
+
+metrics:
+  save_frame_metrics: true
+  save_aggregate_metrics: true
+  generate_plots: true
+  plot_dpi: 150
+  plot_format: png
+
+output:
+  video_codec: mp4v
+  video_fps: 30
+  save_annotated_video: true
+  save_metrics_csv: true
+  save_plots: true

@@ -1,0 +1,23 @@
+{
+  "mode": "edge",
+  "num_workers": 10,
+  "total_videos": 15,
+  "successful_videos": 15,
+  "failed_videos": 0,
+  "total_duration_sec": 17.234082221984863,
+  "throughput_videos_per_sec": 0.8703683669830163,
+  "cpu_start": 6.0,
+  "cpu_end": 7.4,
+  "cpu_avg": 6.7,
+  "ram_start_gb": 12.101688385009766,
+  "ram_end_gb": 11.215080261230469,
+  "ram_avg_gb": 11.658384323120117,
+  "ram_percent_avg": 74.85,
+  "avg_processing_time_per_video": 1.148938814798991,
+  "avg_processing_time_ms": 67.8737346147348,
+  "avg_vehicle_count": 9.945369105552237,
+  "avg_speed": 46.323702655879295,
+  "avg_congestion_pct": 0.0,
+  "total_frames": 784,
+  "avg_processing_fps": 15.090946151654467
+}
